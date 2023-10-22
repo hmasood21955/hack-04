@@ -17,3 +17,19 @@ int main(int argc,char *argv[])
 
 
 
+    for(int month = 1; month <= years_until_retirement * 12; month++)
+    {
+
+        inflation_adj_interest = (balance * monthly_rate_of_return) - (balance * monthly_rate_of_inflation);
+        new_balance = balance + inflation_adj_interest + monthly_contribution;
+
+        printf("%d\n $%.2lf\n $%.2lf\n $%.2f\n $%.2lf\n", month, balance, inflation_adj_interest, monthly_contribution, new_balance);
+        
+        balance = new_balance;
+
+
+    }
+
+
+
+}
